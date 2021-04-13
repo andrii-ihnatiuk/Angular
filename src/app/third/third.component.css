@@ -1,0 +1,57 @@
+.third_container {
+    padding: 10px;
+    border: dotted black;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+#message {
+    width: 100px;
+    text-align: center;
+}
+
+button {
+    margin-top: 10px;
+}
+
+/* <<------- CONDITIONS ------->> */
+
+.condition_container {
+    display: flex;
+    flex-direction: column;
+}
+
+.condition {
+    display: flex;
+    justify-content: center;
+}
+
+.true_block {
+    width: 100px;
+    height: 100px;
+    background-color: green;
+
+}
+
+.false_block {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
+
+/* <<------- CHECKBOXES ------->> */
+
+.checkbox_container {
+    width: 200px;
+}
+
+.red {
+    color: red;
+}
+
+.italic {
+    font-style: italic;
+}

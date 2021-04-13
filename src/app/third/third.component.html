@@ -1,0 +1,32 @@
+<div class="third_container">
+
+    <div>
+        <p>List of random countries using ngFor:</p>
+        
+        <ul>
+            <li *ngFor="let item of array">{{ item }}</li>
+        </ul>
+    </div>
+
+    <div class="condition_container">
+        <p id="message">The condition is set to: {{ condition }}</p>
+        <div *ngIf="condition" class="condition">
+            <div class="true_block"></div>
+        </div>
+    
+        <div *ngIf="!condition" class="condition">
+            <div class="false_block"></div>
+        </div>
+
+        <button (click)="switchCondition()">Change</button>
+    </div>
+
+    <div class="checkbox_container">
+        <p [ngClass]="{red:redColor, italic:cursive}">Lorem ipsum dolor sit amet.</p>
+        <div class="checkbox_inner">
+            Red<input type="checkbox" (click)="checkHandler('color')">
+            Italic<input type="checkbox" (click)="checkHandler('style')">
+        </div>
+    </div>
+
+</div>
