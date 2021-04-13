@@ -1,0 +1,25 @@
+.second_container {
+    padding: 10px;
+    border: dotted black;
+    margin-top: 10px;
+}
+
+.buttons_container {
+    display: flex;
+    justify-content: center;
+}
+
+.button:last-child {
+    margin-left: 5px;
+}
+
+.button {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+}
+
+.text {
+    text-align: center;
+    margin-top: 10px;
+}

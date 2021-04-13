@@ -1,0 +1,60 @@
+.home_container {
+    padding: 10px;
+    border: dotted black;
+}
+
+#clicks {
+    text-align: center;
+}
+
+/* <<------- TITLE ------->> */
+.title {
+    display: flex;
+    justify-content: center;
+}
+
+.input, .title_text {
+    width: 50%;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: xx-large;
+    font-weight: 600;
+}
+
+.input {
+    outline: none;
+    border: none;
+    text-align: right;
+    color: blue;
+}
+
+/* <<------- GREETING BLOCK ------->> */
+
+.greeting {
+    font-size: 20px;
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.g_text {
+    color: blue;
+}
+
+.name {
+    color: green;
+}
+
+/* <<------- BUTTONS ------->> */
+
+.btn1, .btn2 {
+    padding: 10px;
+    border-color: green;
+    border-style: solid;
+    border-width: 3px;
+}
+
+.btn2 {
+    margin-top: 10px;
+}
+
+
