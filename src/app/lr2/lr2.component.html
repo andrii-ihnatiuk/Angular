@@ -1,0 +1,42 @@
+<ng-content></ng-content>
+
+<ng-container *ngTemplateOutlet="universalTitle"></ng-container>
+
+
+<p>Select one country</p>
+<select name="country" id="" (change)="setCountry($any($event.target).value)">
+    <option selected disabled>Select country</option>
+    <option *ngFor="let c of countries" [ngValue]="c.name"> {{ c.name }} </option>
+</select>
+
+<div *ngIf="selCountry === 'Ukraine'; then uk;"></div>
+<div *ngIf="selCountry === 'Poland'; then pol;"></div>
+
+<p>Here you can add product and it will be displayed in child component</p>
+<input type="text" placeholder="Enter product" #product>
+<input type="number" placeholder="Product price" #price>
+<button (click)="addProduct(product.value, price.value)">Send</button>
+
+<app-lr2-child1 [titleTmpl] = "universalTitle" #child1></app-lr2-child1>
+
+<!-- <<==== TEMPLATES ====>> -->
+
+<ng-template #universalTitle>
+    <h3>This is a good title</h3>
+</ng-template>
+
+<ng-template #uk>
+    <p>Here is the list of some cities of Ukraine :</p>
+
+    <ol>
+        <li *ngFor="let city of ukCities"> {{ city.name }} </li>
+    </ol>
+</ng-template>
+
+<ng-template #pol>
+    <p>Here is the list of some cities of Poland:</p>
+
+    <ol>
+        <li *ngFor="let city of polCities"> {{ city.name }} </li>
+    </ol>
+</ng-template>

@@ -1,6 +1,7 @@
 .home_container {
     padding: 10px;
     border: dotted black;
+    margin-bottom: 20px;
 }
 
 #clicks {
@@ -55,6 +56,12 @@
 
 .btn2 {
     margin-top: 10px;
+}
+
+/* <<------- STYLE FOR INTEGRATION INTO LR2 COMPONENT ------->> */
+
+.lr2_title {
+    text-align: center;
 }
 
 
