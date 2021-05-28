@@ -1,0 +1,55 @@
+<div class="container-lg">
+    <div class="weather_container">
+
+        <div class="weather_select">
+            <select class="form-select form_select_cust" aria-label="Default select example"
+                (change)="getWeatherData($event)">
+                <option selected disabled>City</option>
+                <option *ngFor="let city of cities" value="{{ city.id }}">{{ city.name }}</option>
+            </select>
+        </div>
+        <div class="weather_inner">
+
+            <div *ngIf="isSetCity" class="weather_content">
+                <div class="weather_title display-3">{{ curCity }}</div>
+                <div class="weather_today">
+                    <div class="weather_summary">
+                        <div class="h1"> {{ current.temp }}°C </div>
+                        <div class="h2"> {{ current.date }} {{ selDay.weather.main }} ({{ selDay.weather.more }}) </div>
+                    </div>
+                    <div class="temp_container">
+                        <div class="temp_inner me-4">
+                            <div class="h3 temp_color">Temperature:</div>
+                            <div class="temp_day">
+                                Day: {{ selDay.temp.day }}°C
+                            </div>
+                            <div class="temp_night">
+                                Night: {{ selDay.temp.night }}°C
+                            </div>
+                        </div>
+                        <div class="temp_inner">
+                            <div class="h3 temp_color">Feels like:</div>
+                            <div class="temp_day">
+                                Day: {{ selDay.feels_like.day }}°C
+                            </div>
+                            <div class="temp_night">
+                                Night: {{ selDay.feels_like.night }}°C
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="weather_other">
+
+                    <div *ngFor="let day of [weatherData[1], weatherData[2], weatherData[3], weatherData[4], weatherData[5], weatherData[6]]; let i = index"
+                        [attr.data-index]="i" class="day_other" (click)=specifyDay(i)>
+                        <div class="day_info">
+                            {{ day.weather.main }}, {{ day.temp.day }}°C
+                        </div>
+                        {{ day.dt }}
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

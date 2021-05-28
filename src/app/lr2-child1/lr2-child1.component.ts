@@ -15,7 +15,7 @@ export class Lr2Child1Component implements OnInit {
 
   pipeTest: string;
 
-  constructor() { 
+  constructor() {
     this.titleTmpl = null;
     this.isArrayEmpty = true;
     this.pipeTest = 'Hello dear frind! We are so excited to see you on this page.';

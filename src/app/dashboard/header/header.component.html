@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar_custom">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/home">Main page</a>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/lr3">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/lr3/about">About us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/lr3/weather">Weather</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/lr3/preferences">My preferences</a>
+          </li>
+        </ul>
+        <nav class="nav navbar-nav navbar-right">
+          <button class="btn btn-outline-secondary me-2" (click)="go('reg')">Register</button>
+          <button class="btn btn-outline-success ms-2" (click)="go('log')">Log in</button>
+        </nav>
+      </div>
+    </div>
+</nav>

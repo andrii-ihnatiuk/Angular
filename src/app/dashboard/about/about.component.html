@@ -1,0 +1,86 @@
+<div class="container-lg">
+    <div class="about_container">
+        <p>
+            <ngb-alert type='success' [dismissible]="false" class="d-flex justify-content-center h2">
+                We are always focused on success
+            </ngb-alert>
+        </p>
+        <div class="pills_container">
+            <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-pills nav_custom" orientation="vertical">
+                <li [ngbNavItem]="1">
+                    <a ngbNavLink>Do</a>
+                    <ng-template ngbNavContent>
+                        <p class="pill_content">Raw denim you probably haven't heard of them jean shorts Austin.
+                            Nesciunt tofu stumptown aliqua,
+                            retro synth
+                            master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit
+                            butcher
+                            retro
+                            keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid.
+                            Aliquip
+                            placeat
+                            salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi
+                            qui.</p>
+                    </ng-template>
+                </li>
+                <li [ngbNavItem]="2">
+                    <a ngbNavLink>The</a>
+                    <ng-template ngbNavContent>
+                        <p class="pill_content">Exercitation +1 labore velit, blog sartorial PBR leggings next level wes
+                            anderson artisan four loko
+                            farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk
+                            aliquip
+                            jean shorts
+                            ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus
+                            mollit.
+                            Keytar
+                            helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio
+                            cillum
+                            wes anderson
+                            8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art
+                            party
+                            scenester
+                            stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
+                    </ng-template>
+                </li>
+                <li [ngbNavItem]="3">
+                    <a ngbNavLink>Best</a>
+                    <ng-template ngbNavContent>
+                        <p class="pill_content">Sed commodo, leo at suscipit dictum, quam est porttitor sapien, eget
+                            sodales nibh elit id diam. Nulla
+                            facilisi.
+                            Donec egestas ligula vitae odio interdum aliquet. Duis lectus turpis, luctus eget tincidunt
+                            eu,
+                            congue et odio.
+                            Duis pharetra et nisl at faucibus. Quisque luctus pulvinar arcu, et molestie lectus ultrices
+                            et. Sed
+                            diam urna,
+                            egestas ut ipsum vel, volutpat volutpat neque. Praesent fringilla tortor arcu. Vivamus
+                            faucibus nisl
+                            enim, nec
+                            tristique ipsum euismod facilisis. Morbi ut bibendum est, eu tincidunt odio. Orci varius
+                            natoque
+                            penatibus et
+                            magnis dis parturient montes, nascetur ridiculus mus. Mauris aliquet odio ac lorem aliquet
+                            ultricies
+                            in eget
+                            neque. Phasellus nec tortor vel tellus pulvinar feugiat.</p>
+                    </ng-template>
+                </li>
+            </ul>
+
+            <div [ngbNavOutlet]="nav" class="mt-2 pill_text"></div>
+        </div>
+        <div class="rating_container">
+            <div class="rating_inner">
+                <p class="rating_text">Rate us!</p>
+                <ngb-rating [(rate)]="currentRate">
+                    <ng-template let-fill="fill" let-index="index">
+                        <span class="star" [class.filled]="fill === 100" [class.bad]="index < 2" [class.normal]="index >=2"
+                            [class.good]="index >=4">&#9733;</span>
+                    </ng-template>
+                </ngb-rating>
+            </div>
+        </div>
+    </div>
+</div>

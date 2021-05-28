@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({ // Decorator for component
   selector: 'app-home',
@@ -11,7 +12,7 @@ export class HomeComponent implements OnInit {
   title: string;
   clicks: number;
 
-  constructor() { 
+  constructor(private router: Router) {
     this.firstName = '';
     this.title = '';
     this.clicks = 0;
@@ -30,8 +31,12 @@ export class HomeComponent implements OnInit {
     this.firstName = 'Roman';
   }
 
-  setClicks(details: boolean):void {
-    details==true? this.clicks++ : this.clicks--;
+  setClicks(details: boolean): void {
+    details === true ? this.clicks++ : this.clicks--;
+  }
+
+  navigate(): void {
+    this.router.navigate(['/lr3']);
   }
 
 }

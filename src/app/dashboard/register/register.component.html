@@ -1,0 +1,31 @@
+<div class="container-lg">
+    <div class="message">Let's get to know each other</div>
+    <form class="row g-3">
+        <div class="col-6">
+            <div class="input-group">
+                <div class="input-group-text">@</div>
+                <input type="text" class="form-control" placeholder="Nickname" aria-label="Nickname">
+            </div>
+        </div>
+        <div class="col-6">
+            <input type="password" class="form-control" placeholder="Password" aria-label="Password">
+        </div>
+        <div class="col-6">
+            <input type="text" class="form-control" placeholder="Firstname" aria-label="Firstname">
+        </div>
+        <div class="col-6">
+            <input type="text" class="form-control" placeholder="Secondname" aria-label="Secondname">
+        </div>
+        <div class="col-12">
+            <input type="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="col-12">
+            <input type="tel" class="form-control" placeholder="Number" aria-label="Number" aria-describedby="telHelp">
+            <div id="telHelp" class="form-text">This will help us restore your account if it's lost.</div>
+        </div>
+        <div class="col-12">
+            <button class="btn btn-outline-primary button_register" (click)="register()">Register</button>
+        </div>
+    </form>
+</div>

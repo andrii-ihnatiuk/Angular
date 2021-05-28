@@ -1,0 +1,59 @@
+.container-lg {
+    max-width: 1000px;
+}
+
+.prefs_container {
+    height: calc(100vh - 60px);
+    display: flex;
+    align-items: center;
+}
+
+.prefs_inner {
+    width: 100%;
+    height: 85vh;
+    padding: 40px;
+    border: 2px solid #ced4da;
+    border-radius: 20px;
+}
+
+.prefs_title {
+    text-align: center;
+}
+
+.prefs_content {
+    display: flex;
+}
+
+.prefs_form {
+    margin-top: 0 !important;
+    flex-grow: 1;
+}
+
+.nav_custom {
+    margin-right: 40px;
+}
+
+.nav-item .nav-link {
+    color: black;
+    text-align: center;
+}
+
+.nav-item .active {
+    color: white;
+    background-color: #6c757d;
+}
+
+.btn_custom {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.email_group_custom {
+    align-items: center;
+}
+
+.form_email_custom {
+    margin-right: 20px;
+    border-bottom-right-radius: 0.25rem !important;
+    border-top-right-radius: 0.25rem !important;
+}
