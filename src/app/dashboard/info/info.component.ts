@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Order } from 'src/app/shared/models/order.model';
-import { map } from 'rxjs/operators'
+import { OrdersService } from 'src/app/core/services/orders/orders.service';
 
 interface Country {
   id: number;
@@ -51,21 +50,15 @@ const COUNTRIES: Array<Country> = [
 export class InfoComponent implements OnInit {
 
   countries: any;
-  order: Order | null;
   rows: Order[] | null;
 
-  constructor(private http: HttpClient) {
+  constructor(private ordersService: OrdersService) {
     this.countries = COUNTRIES;
-    this.order = null;
     this.rows = null;
   }
 
   ngOnInit(): void {
-    this.http.get('https://pnitfunctions.azurewebsites.net/api/GetOrders'
-    ).pipe(
-      map((response: any) =>
-        response.map((order: Order) => new Order(order.name, order.category, order.price)))
-    ).subscribe((orders: Order[]) => {
+    this.ordersService.getAll().subscribe((orders: Order[]) => {
       this.rows = orders;
     });
   }
