@@ -3,11 +3,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { SecondComponent } from './second/second.component';
-import { ThirdComponent } from './third/third.component';
-import { Lr2Component } from './lr2/lr2.component';
-import { Lr2Child1Component } from './lr2-child1/lr2-child1.component';
+import { HomeComponent } from './mainPage/home/home.component';
+import { SecondComponent } from './mainPage/second/second.component';
+import { ThirdComponent } from './mainPage/third/third.component';
+import { Lr2Component } from './mainPage/lr2/lr2.component';
+import { Lr2Child1Component } from './mainPage/lr2-child1/lr2-child1.component';
 import { NoSpacePipe } from './customPipes/no-space.pipe';
 import { Lr3Component } from './dashboard/lr3/lr3.component';
 import { ContainerComponent } from './container/container.component';
@@ -19,8 +19,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AboutComponent } from './dashboard/about/about.component';
 import { PreferencesComponent } from './dashboard/preferences/preferences.component';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { WeatherComponent } from './dashboard/weather/weather.component';
+import { AuthInterceptor } from './core/interceptors/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,7 @@ import { WeatherComponent } from './dashboard/weather/weather.component';
     RegisterComponent,
     AboutComponent,
     PreferencesComponent,
-    WeatherComponent
+    WeatherComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,7 +51,13 @@ import { WeatherComponent } from './dashboard/weather/weather.component';
     NgxDatatableModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

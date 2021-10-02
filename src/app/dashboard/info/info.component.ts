@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Order } from 'src/app/shared/models/order.model';
-import { map } from 'rxjs/operators';
+import { map } from 'rxjs/operators'
 
 interface Country {
   id: number;
@@ -61,7 +61,7 @@ export class InfoComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.http.get('https:pnit-lessons.azurewebsites.net/api/GetOrders?code=voAZPm2haRW7O5a7M1Ycp/EZRWZcXrDvkueyumTmQjOwOfIKTtl33w=='
+    this.http.get('https://pnitfunctions.azurewebsites.net/api/GetOrders'
     ).pipe(
       map((response: any) =>
         response.map((order: Order) => new Order(order.name, order.category, order.price)))

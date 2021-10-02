@@ -17,8 +17,9 @@
           </li>
         </ul>
         <nav class="nav navbar-nav navbar-right">
-          <button class="btn btn-outline-secondary me-2" (click)="go('reg')">Register</button>
-          <button class="btn btn-outline-success ms-2" (click)="go('log')">Log in</button>
+          <button id="btn_reg" class="btn btn-outline-secondary me-2" (click)="go('reg')">Register</button>
+          <button id="btn_login" class="btn btn-outline-success ms-2" (click)="go('login')">Log in</button>
+          <button id="btn_logout" class="btn btn-outline-danger ms-2 hidden" (click)="go('logout')">Log out</button>
         </nav>
       </div>
     </div>

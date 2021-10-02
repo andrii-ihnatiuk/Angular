@@ -1,10 +1,10 @@
-<div class="container-lg">
+<!-- <div class="container-lg">
     <div class="message">Can't wait to see you...</div>
     <form class="row g-3 align-items-center">
         <div class="col-5 pe-0">
             <div class="input-group">
                 <div class="input-group-text">@</div>
-                <input type="text" class="form-control" placeholder="Nickname" aria-label="Nickname">
+                <input id="login" type="text" class="form-control" placeholder="Nickname" aria-label="Nickname">
             </div>
         </div>
         <div class="col p-0 or_between">or</div>
@@ -13,7 +13,32 @@
         </div>
         <div class="col-12">
             <div class="input-group">
-                <input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="button-addon1">
+                <input id="password" type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="button-addon1">
+                <button class="btn btn-outline-danger" type="button" id="button-addon1">Forgot</button>
+            </div>
+        </div>
+        <div class="col-12">
+            <button class="btn btn-outline-primary button_login" (click)="login()">Log in</button>
+        </div>
+    </form>
+</div> -->
+
+<div class="container-lg">
+    <div class="message">Can't wait to see you...</div>
+    <form class="row g-3 align-items-center" [formGroup]="form">
+        <div class="col-5 pe-0">
+            <div class="input-group">
+                <div class="input-group-text">@</div>
+                <input id="login" type="text" formControlName="login" name="login" class="form-control" placeholder="Nickname" aria-label="Nickname">
+            </div>
+        </div>
+        <div class="col p-0 or_between">or</div>
+        <div class="col-6 ps-0">
+            <input type="email" name="email" class="form-control" placeholder="Email" aria-label="Email">
+        </div>
+        <div class="col-12">
+            <div class="input-group">
+                <input id="password" type="password" formControlName="password" name="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="button-addon1">
                 <button class="btn btn-outline-danger" type="button" id="button-addon1">Forgot</button>
             </div>
         </div>
