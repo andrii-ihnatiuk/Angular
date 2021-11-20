@@ -11,7 +11,7 @@ export class OrdersService {
 
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<Order[]> {
+  getAll() {
     return this.http.get('https://pnitfunctions.azurewebsites.net/api/GetOrders'
     ).pipe(
       map((response: any) =>
