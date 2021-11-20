@@ -22,4 +22,31 @@ describe('ThirdComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should switch condition', () => {
+    //* Given
+    let condition = component.condition;
+    //* When
+    component.switchCondition();
+    //* Then
+    expect(component.checkHandler).not.toEqual(condition);
+  });
+
+  it('should switch color', () => {
+    //* Given
+    let isRed = component.redColor;
+    //* When
+    component.checkHandler('color');
+    //* Then
+    expect(component.redColor).not.toEqual(isRed);
+  });
+
+  it('should switch cursive', () => {
+    //* Given
+    let isCursive = component.cursive;
+    //* When
+    component.checkHandler('cursive');
+    //* Then
+    expect(component.cursive).not.toEqual(isCursive);
+  });
 });

@@ -58,14 +58,18 @@ export class InfoComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.ordersService.getAll().subscribe((orders: Order[]) => {
-      this.rows = orders;
-    });
+    this.getOrders();
   }
 
   sort(e: any): void {
     const id: string = e.target.id;
     console.log('sorting by' + id);
+  }
+
+  getOrders(): void {
+    this.ordersService.getAll().subscribe((orders: Order[]) => {
+      this.rows = orders;
+    });
   }
 
 }

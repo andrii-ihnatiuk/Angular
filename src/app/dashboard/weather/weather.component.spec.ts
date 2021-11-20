@@ -1,14 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { WeatherServiceService } from 'src/app/core/api/weather-service.service';
 import { WeatherComponent } from './weather.component';
 
 describe('WeatherComponent', () => {
   let component: WeatherComponent;
   let fixture: ComponentFixture<WeatherComponent>;
+  let weatherService: WeatherServiceService;
 
   beforeEach(async () => {
+    weatherService = jasmine.createSpyObj('WeatherService', ['getWeather$']);
+
     await TestBed.configureTestingModule({
-      declarations: [ WeatherComponent ]
+      declarations: [ WeatherComponent ],
+      providers: [
+        { provide: WeatherServiceService, useValue: weatherService }
+      ]
     })
     .compileComponents();
   });
