@@ -48,7 +48,7 @@ describe('AuthService', () => {
       return storage[key] = value;
     });
     // * When
-    service.setToken(tokenExample);
+    service.setToken('tokenExample');
     // * Then
     expect(localStorage.setItem).toHaveBeenCalledOnceWith('access_token', tokenExample);
   });
