@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit {
       this.router.navigate(['/lr3/register']);
     } else if (path === 'logout') {
       this.authService.logout();
-    } 
+    }
   }
 
 }

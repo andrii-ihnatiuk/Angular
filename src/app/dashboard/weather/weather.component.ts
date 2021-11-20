@@ -73,15 +73,22 @@ export class WeatherComponent implements OnInit {
   }
 
   specifyDay(index: number): void {
-    let selDate = this.weatherData[index + 1].dt;
+    const selDate = this.weatherData[index + 1].dt;
 
     if (this.current.date === selDate) {
       return;
     }
-    for (let i = 0; i < this.weatherData.length; i++) {
-      if (this.weatherData[i].dt === selDate) {
-        this.selDay = this.weatherData[i];
-        this.current = { date: selDate, temp: this.weatherData[i].temp.day };
+    // for (let i = 0; i < this.weatherData.length; i++) {
+    //   if (this.weatherData[i].dt === selDate) {
+    //     this.selDay = this.weatherData[i];
+    //     this.current = { date: selDate, temp: this.weatherData[i].temp.day };
+    //   }
+    // }
+
+    for (const weatherData of this.weatherData) {
+      if (this.weatherData.dt === selDate) {
+        this.selDay = this.weatherData;
+        this.current = { date: selDate, temp: this.weatherData.temp.day };
       }
     }
   }

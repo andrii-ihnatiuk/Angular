@@ -30,47 +30,47 @@ describe('HomeComponent', () => {
   });
 
   it('should change name to Andrew', () => {
-    //* Given
-    let name = component.firstName;
-    //* When
+    // * Given
+    const name = component.firstName;
+    // * When
     component.andrew();
-    //* Then
+    // * Then
     expect(component.firstName).not.toEqual(name);
   });
 
   it('should change name to Roman', () => {
-    //* Given
-    let name = component.firstName;
-    //* When
+    // * Given
+    const name = component.firstName;
+    // * When
     component.roman();
-    //* Then
+    // * Then
     expect(component.firstName).not.toEqual(name);
-  })
-  
+  });
+
   it('should increase clicks', () => {
-    //* Given
-    let clicks = component.clicks;
-    //* When
+    // * Given
+    const clicks = component.clicks;
+    // * When
     component.setClicks(true);
-    //* Then
+    // * Then
     expect(component.clicks).toBeGreaterThan(clicks);
   });
 
   it('should decrese clicks', () => {
-    //* Given
-    let clicks = component.clicks;
-    //* When
+    // * Given
+    const clicks = component.clicks;
+    // * When
     component.setClicks(false);
-    //* Then
+    // * Then
     expect(component.clicks).toBeLessThan(clicks);
   });
 
   it('should navigate to /lr3', () => {
-    //* Given
-    //* When
+    // * Given
+    // * When
     component.navigate();
-    //* Then
+    // * Then
     expect(router.navigate).toHaveBeenCalledOnceWith(['/lr3']);
-  })
+  });
 
 });

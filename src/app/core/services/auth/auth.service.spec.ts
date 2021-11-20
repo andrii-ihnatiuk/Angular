@@ -8,8 +8,8 @@ describe('AuthService', () => {
   let http: HttpClient;
   type storeType = {
     [key: string]: string
-  }
-  let storage: storeType = {};
+  };
+  const storage: storeType = {};
 
   beforeEach(() => {
     router = jasmine.createSpyObj('Router', ['navigate']);
@@ -23,55 +23,55 @@ describe('AuthService', () => {
   });
 
   it('should navigate to login page on logout', () => {
-    //* Given
-    //* When
+    // * Given
+    // * When
     service.logout();
-    //* Then
+    // * Then
     expect(router.navigate).toHaveBeenCalledOnceWith(['lr3/login']);
   });
 
   it('should remove token on logout', () => {
-    //* Given
-    spyOn(localStorage, 'removeItem').and.callFake((key: string):void => {
+    // * Given
+    spyOn(localStorage, 'removeItem').and.callFake((key: string): void => {
       delete storage[key];
     });
-    //* When
+    // * When
     service.logout();
-    //* Then
+    // * Then
     expect(localStorage.removeItem).toHaveBeenCalledOnceWith('access_token');
   });
 
   it('should set token to localStorage', () => {
-    //* Given
-    let tokenExample = '12345';
-    spyOn(localStorage, 'setItem').and.callFake((key: string, value: string):string => {
+    // * Given
+    const tokenExample = '12345';
+    spyOn(localStorage, 'setItem').and.callFake((key: string, value: string): string => {
       return storage[key] = value;
     });
-    //* When
+    // * When
     service.setToken(tokenExample);
-    //* Then
+    // * Then
     expect(localStorage.setItem).toHaveBeenCalledOnceWith('access_token', tokenExample);
   });
 
   it('should return token from localStorage', () => {
-    //* Given
-    spyOn(localStorage, 'getItem').and.callFake((key: string):string => {
+    // * Given
+    spyOn(localStorage, 'getItem').and.callFake((key: string): string => {
       return storage[key];
     });
-    //* When
-    service.getToken()
-    //* Then
+    // * When
+    service.getToken();
+    // * Then
     expect(localStorage.getItem).toHaveBeenCalled();
   });
 
   it('should be called before setInOut', () => {
-    //* Given
+    // * Given
     spyOn(service, 'setInOut').and.returnValue();
     spyOn(service, 'logout').and.callThrough();
-    //* When
+    // * When
     service.logout();
-    //* Then
+    // * Then
     expect(service.logout).toHaveBeenCalledBefore(service.setInOut);
-  })
+  });
 
 });

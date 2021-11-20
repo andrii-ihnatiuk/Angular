@@ -33,11 +33,11 @@ export class AuthInterceptor implements HttpInterceptor {
     );
   }
 
-  private handleAuthError(err: HttpErrorResponse) {
+  private handleAuthError(err: HttpErrorResponse): Observable<never> {
     if (err.status === 0) {
       // A client-side or network error occurred. Handle it accordingly.
       console.error('An error occurred:', err.error);
-    } 
+    }
     else if (err.status === 401) {
       if (!this.authService.getToken()) {
         this.router.navigate(['/lr3/login']);
@@ -48,8 +48,8 @@ export class AuthInterceptor implements HttpInterceptor {
           this.authService.logout(); // Очищаем local storage чтобы alert не появлялся вновь
         }
       }
-    } 
-    
+    }
+
     return throwError(err);
   }
 }

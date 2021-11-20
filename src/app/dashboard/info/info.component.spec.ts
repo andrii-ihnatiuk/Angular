@@ -8,7 +8,6 @@ import { InfoComponent } from './info.component';
 
 describe('InfoComponent', () => {
   let component: InfoComponent;
-  let fixture: ComponentFixture<InfoComponent>;
   let ordersService: OrdersService;
 
   beforeEach(async () => {
@@ -31,19 +30,19 @@ describe('InfoComponent', () => {
   });
 
   it('should set received data', () => {
-    //* Given
-    let orders = [
+    // * Given
+    const orders = [
       { name: 'awfs', category: 'fgfd', price: 12 },
       { name: 'sdaf', category: 'gfds', price: 13 },
       { name: 'awfs', category: 'fgft', price: 10 }
     ];
-    let observable: Observable<Order[]> = of(orders);
+    const observable: Observable<Order[]> = of(orders);
     ordersService.getAll = jasmine.createSpy().and.callFake(() => {
       return observable;
     });
-    //* When
+    // * When
     component.getOrders();
-    //* Then
+    // * Then
     expect(component.rows).toEqual(orders);
-  })
+  });
 });

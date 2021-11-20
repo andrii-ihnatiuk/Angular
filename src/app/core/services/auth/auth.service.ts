@@ -11,7 +11,7 @@ export class AuthService {
   private readonly accessTokenKey = 'access_token';
   private readonly userNameClaim = 'http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name';
   private token: any;
-  
+
   constructor(private httpClient: HttpClient, private router: Router) { }
 
   login(username: string, password: string): any {
@@ -27,10 +27,10 @@ export class AuthService {
   isTokenExpired(): boolean {
     const helper = new JwtHelperService();
     let isExpired = true;
-    
+
     if (!!this.getToken()) {
       this.token = this.getToken();
-      if (this.token.length != 0) {
+      if (this.token.length !== 0) {
         isExpired = helper.isTokenExpired(this.token);
       }
     }
@@ -42,13 +42,13 @@ export class AuthService {
   }
 
   getUserRole(): string | null {
-    var token = this.getToken();
-    var tkn;
+    const token = this.getToken();
+    let tkn;
 
     const jwtHelperService = new JwtHelperService();
     if (token === null) {
       tkn = undefined;
-    } else tkn = token;
+    } else { tkn = token; }
     const decodedToken = jwtHelperService.decodeToken(tkn);
 
     console.log(decodedToken);
@@ -57,22 +57,22 @@ export class AuthService {
   }
 
   setToken(token: string): void {
-    localStorage.setItem(this.accessTokenKey, token)
+    localStorage.setItem(this.accessTokenKey, token);
   }
 
   setInOut(): void {
-    let login = document.getElementById('btn_login');
-    let logout = document.getElementById('btn_logout');
-    let reg = document.getElementById('btn_reg');
-      
-    if (this.getToken() != null && !this.isTokenExpired()) {
-      if (login != null && logout != null && reg != null) {
+    const login = document.getElementById('btn_login');
+    const logout = document.getElementById('btn_logout');
+    const reg = document.getElementById('btn_reg');
+
+    if (this.getToken() !== null && !this.isTokenExpired()) {
+      if (login !== null && logout !== null && reg !== null) {
         login.classList.add('hidden');
         reg.classList.add('hidden');
         logout.classList.remove('hidden');
-      } 
+      }
     } else {
-      if (login != null && logout != null && reg != null)  {
+      if (login !== null && logout !== null && reg !== null)  {
         login.classList.remove('hidden');
         reg.classList.remove('hidden');
         logout.classList.add('hidden');

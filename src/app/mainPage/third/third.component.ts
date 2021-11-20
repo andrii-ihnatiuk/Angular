@@ -9,7 +9,7 @@ export class ThirdComponent implements OnInit {
 
 
   condition: boolean;
-  array: Array<String>;
+  array: Array<string>;
 
   redColor: boolean;
   cursive: boolean;
@@ -25,14 +25,16 @@ export class ThirdComponent implements OnInit {
   }
 
   switchCondition(): void {
-    this.condition=!this.condition;
+    this.condition = !this.condition;
   }
 
-  checkHandler(change: string) {
-    if (change === 'color') 
-      this.redColor=!this.redColor;  
-    else
-      this.cursive=!this.cursive;
+  checkHandler(change: string): void {
+    if (change === 'color') {
+      this.redColor = !this.redColor;
+    }
+    else {
+      this.cursive = !this.cursive;
+    }
   }
-  
+
 }
